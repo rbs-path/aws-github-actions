@@ -30,7 +30,7 @@ const run = async (): Promise<void> => {
       },
     };
 
-    // tslint-disable-next-line @typescript-tslint/no-unused-vars
+    // @ts-ignore
     const config = new AWS.Config({
       maxRetries: 5,
     });
