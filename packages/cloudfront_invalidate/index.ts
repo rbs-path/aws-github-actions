@@ -1,5 +1,6 @@
 import * as core from '@actions/core';
 import * as CloudFront from 'aws-sdk/clients/cloudfront';
+import * as AWS from 'aws-sdk';
 
 const run = async (): Promise<void> => {
   try {
@@ -29,6 +30,10 @@ const run = async (): Promise<void> => {
       },
     };
 
+    // tslint-disable-next-line @typescript-tslint/no-unused-vars
+    const config = new AWS.Config({
+      maxRetries: 5,
+    });
     const cloudfront = new CloudFront({ apiVersion: '2019-03-26', customUserAgent: 'aws-github-actions-cloudfront' });
     const invalidation = await cloudfront.createInvalidation(params).promise();
     const invalidationId = invalidation.Invalidation.Id;
