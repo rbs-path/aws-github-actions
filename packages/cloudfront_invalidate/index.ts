@@ -1,6 +1,5 @@
 import * as core from '@actions/core';
 import * as CloudFront from 'aws-sdk/clients/cloudfront';
-import * as AWS from 'aws-sdk';
 
 const run = async (): Promise<void> => {
   try {
