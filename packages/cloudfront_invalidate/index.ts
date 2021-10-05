@@ -29,10 +29,6 @@ const run = async (): Promise<void> => {
       },
     };
 
-    // @ts-ignore
-    const config = new AWS.Config({
-      maxRetries: 5,
-    });
     const cloudfront = new CloudFront({ apiVersion: '2019-03-26', customUserAgent: 'aws-github-actions-cloudfront', maxRetries: 5 });
     const invalidation = await cloudfront.createInvalidation(params).promise();
     const invalidationId = invalidation.Invalidation.Id;
