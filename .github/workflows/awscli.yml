@@ -3,7 +3,7 @@ name: awscli
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - '.github/workflows/**'
       - 'awscli/**'

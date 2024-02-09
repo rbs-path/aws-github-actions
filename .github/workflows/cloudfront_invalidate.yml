@@ -3,7 +3,7 @@ name: 'CloudFront Invalidation'
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - '.github/workflows/**'
       - 'cloudfront_invalidate/**'
